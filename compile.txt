@@ -1,0 +1,12 @@
+Wecome you in my Chess GAME!
+
+   A     B     C     D     E     F     G     H
+
+   r     n     b     q     k     b     n     r   1
+   p     p     p     p     p     p     p     p   2
+                                                 3
+                                                 4
+                                                 5
+                                                 6
+   P     P     P     P     P     P     P     P   7
+   R     N     B     Q     K     B     N     R   8
