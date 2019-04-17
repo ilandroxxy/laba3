@@ -27,7 +27,7 @@ void FillPrint(int m, int n)
 
 			if (i == 7)
 			{
-				a[i][j] = 'o';
+				a[i][j] = 'P';
 			}
 
 			if (i == 3 || i == 4 || i == 5 || i == 6)
@@ -37,7 +37,7 @@ void FillPrint(int m, int n)
 
 			if (i == 2)
 			{
-				a[i][j] = '*';
+				a[i][j] = 'p';
 			}
 			
 			if (i == 1)
@@ -55,6 +55,7 @@ void FillPrint(int m, int n)
 		}
 	}
 
+  cout << "Press Esc for Exit" << endl;
 	cout << endl;
 	for (int i = m; i > 0; i--)
 	{
@@ -68,5 +69,70 @@ void FillPrint(int m, int n)
 	cout << endl <<  "    1 2 3 4 5 6 7 8" << endl;
 	cout << "    A B C D E F G H" << endl << endl;
 	cout << endl << endl;
+
+
+
+
+
+
+	for (int i = 0; i < 100; i++)
+	{
+		
+		if (i % 2 == 0)
+		{
+			cout << "**** player's ONE turn ****" << endl;
+			cout << "---------------------------" << endl;
+		}
+		else
+		{
+			cout << "**** player's TWO turn ****" << endl;
+			cout << "---------------------------" << endl;
+		}
+		
+		int x1, y1;
+		cout << "Which figure: " << endl;
+		cin >> x1 >> y1;
+		a[x1][y1] = ' ';
+		cout << endl;
+
+		
+
+		int x2, y2;
+		cout << "Where to go: " << endl;
+		cin >> x2 >> y2;
+		
+		if (i % 2 == 0)
+		{
+			a[x2][y2] = 'P';
+		}
+		else
+		{
+			a[x2][y2] = 'p';
+		}
+		cout << endl;
+
+
+		
+  cout << "Press Esc for Exit" << endl;
+	cout << endl;
+	for (int i = m; i > 0; i--)
+	{
+		cout << i << "  ";
+		for (int j = 1; j <= n; j++)
+		{
+			cout << "|" << a[i][j] ;
+		}
+		cout <<"|" << endl;
+	}
+	cout << endl <<  "    1 2 3 4 5 6 7 8" << endl;
+	cout << "    A B C D E F G H" << endl << endl;
+	cout << endl << endl;
+
+    char c = cin.get();
+         if(c == 27)
+         {
+            break;  
+         }  
+	}
 }
 
