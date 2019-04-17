@@ -1,54 +1,74 @@
 #include <iostream>
-#include <cstdlib>
-#include <ostream>
-#include <fstream>
-
-
 using namespace std;
 
-#define SIZE 8
 
 int main()
 {
-    while(1)
-    {
-        ofstream myfile("/home/ilya/Документы/laba3/compile.txt");
-        myfile << "Wecome you in my Chess GAME!\n\n";
-      //  myfile << "X - White\n- is black\n";
-        myfile << "   A     B     C     D     E     F     G     H\n\n";
-        
-        // for(int i = 1; i <= SIZE; i++)
-        //  {  
-        //     myfile << "   ";
-            for(int j = 1; j <= SIZE;j++)
-            {
-                if(j == 1)
-                myfile << "   r     n     b     q     k     b     n     r   " << j << endl;
+	
+	const int m = 8;
+	const int n = 8;
+	
+	char a[m][n];
 
-                if(j > 2 && j < 7)
-                  myfile << "                                                 " << j << endl;
-                if(j == 2)
-                myfile << "   p     p     p     p     p     p     p     p   " << j << endl;
+	for (int i = m; i > 0; i--)
+	{
+		for (int j = 1; j <= n; j++)
+		{
+			if (i == 8)
+			{
+				a[i][1] = 'X';
+				a[i][2] = 'S';
+				a[i][3] = 'I';
+				a[i][4] = 'W';
+				a[i][5] = 'Q';
+				a[i][6] = 'I';
+				a[i][7] = 'S';
+				a[i][8] = 'X';
+			}
 
-                if(j == 7)
-                myfile << "   P     P     P     P     P     P     P     P   " << j << endl;
+			if (i == 7)
+			{
+				a[i][j] = 'p';
+			}
 
-                if(j == 8)
-                myfile << "   R     N     B     Q     K     B     N     R   " << j << endl;
-                 
-            }
-       
-      //   }       
-         
-         
-         char c = cin.get();
-         if(c == 27)
-         {
-            myfile.close();
-            break;  
-         }     
+			if (i == 3 || i == 4 || i == 5 || i == 6)
+			{
+				a[i][j] = ' ';
+			}
 
-    }
+			if (i == 2)
+			{
+				a[i][j] = 'P';
+			}
+			
+			if (i == 1)
+			{
+				a[i][1] = 'x';
+				a[i][2] = 's';
+				a[i][3] = 'i';
+				a[i][4] = 'w';
+				a[i][5] = 'q';
+				a[i][6] = 'i';
+				a[i][7] = 's';
+				a[i][8] = 'x';
+			}
+			
+		}
+	}
 
-    return 0;
+	cout << endl;
+	for (int i = m; i > 0; i--)
+	{
+		cout << i << "  ";
+		for (int j = 1; j <= n; j++)
+		{
+			cout << "|" << a[i][j] ;
+		}
+		cout <<"|" << endl;
+	}
+	cout << endl <<  "    1 2 3 4 5 6 7 8" << endl;
+	cout << "    A B C D E F G H" << endl << endl;
+	cout << endl << endl;
+	
+	return 0;
 }
