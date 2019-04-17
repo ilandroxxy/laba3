@@ -1,2 +1,2 @@
 all:
-	g++ main.cpp -o compile
+	g++ main.cpp board.cpp header.h -o compile
