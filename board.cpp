@@ -27,7 +27,7 @@ void FillPrint(int m, int n)
 
 			if (i == 7)
 			{
-				a[i][j] = 'P';
+				a[i][j] = 'O';
 			}
 
 			if (i == 3 || i == 4 || i == 5 || i == 6)
@@ -37,7 +37,7 @@ void FillPrint(int m, int n)
 
 			if (i == 2)
 			{
-				a[i][j] = 'p';
+				a[i][j] = 'o';
 			}
 			
 			if (i == 1)
@@ -95,25 +95,92 @@ void FillPrint(int m, int n)
 		a[x1][y1] = ' ';
 		cout << endl;
 
-		
-
 		int x2, y2;
 		cout << "Where to go: " << endl;
 		cin >> x2 >> y2;
 		
+		if (i % 2 == 0)  //проверка на шаг не больше 1 (или 2 при старте)  сверху
+		{
+			if(a[x2][y2] == 'o' || a[x2][y2] == 'O')
+			{
+				
+				cout << "Error!" << endl;
+				system("pause");
+				break;
+			}
+			if (x1 == 7)
+			{
+				if ((x1 - x2) > 2)
+				{
+					cout << "Error!" << endl;
+					system("pause");
+					break;
+				}
+			}
+			else
+			{
+				if ((x1 - x2) > 1)
+				{
+					cout << "Error!" << endl;
+					system("pause");
+					break;
+				}
+			}
+			if (y1 != y2)
+			{
+				cout << "Error!" << endl;
+				system("pause");
+				break;
+			}
+		}
+		else  //проверка на шаг не больше 1 (или 2 при старте) снизу
+		{
+			if(a[x2][y2] == 'o' || a[x2][y2] == 'O')
+			{
+				cout << "Error!" << endl;
+					system("pause");
+					break;
+			}
+			if (x1 == 2)
+			{
+				if ((x2 - x1) > 2)
+				{
+					cout << "Error!" << endl;
+					system("pause");
+					break;
+				}
+			}
+			else
+			{
+				if ((x2 - x1) > 1)
+				{
+					cout << "Error!" << endl;
+					system("pause");
+					break;
+				}
+			}
+			if (y1 != y2)
+			{
+				cout << "Error!" << endl;
+				system("pause");
+				break;
+			}
+			
+		}
+
 		if (i % 2 == 0)
 		{
-			a[x2][y2] = 'P';
+			a[x2][y2] = 'O';
 		}
 		else
 		{
-			a[x2][y2] = 'p';
+			a[x2][y2] = 'o';
 		}
 		cout << endl;
 
 
 		
-  cout << "Press Esc for Exit" << endl;
+  	cout << "Press Esc for Exit" << endl;
 	cout << endl;
 	for (int i = m; i > 0; i--)
 	{
