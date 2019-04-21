@@ -12,4 +12,4 @@ build/board.o: src/board.cpp
 .PHONY: all clean install uninstall
 
 clean:
-	rm -rf build/*.o
+	rm -rf bin/* build/*.o
