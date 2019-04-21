@@ -1,13 +1,13 @@
+#include "header.h"
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
-#include "header.h"
 
 using namespace std;
 
 void FillPrint(int m, int n)
 {
-    char a[m][n];
+	char a[m][n];
 
 	for (int i = m; i > 0; i--)
 	{
@@ -39,7 +39,6 @@ void FillPrint(int m, int n)
 			{
 				a[i][j] = 'o';
 			}
-			
 			if (i == 1)
 			{
 				a[i][1] = 'x';
@@ -51,11 +50,10 @@ void FillPrint(int m, int n)
 				a[i][7] = 's';
 				a[i][8] = 'x';
 			}
-			
 		}
 	}
 
-  cout << "Press Esc for Exit" << endl;
+ 	cout << "Press Esc for Exit" << endl;
 	cout << endl;
 	for (int i = m; i > 0; i--)
 	{
@@ -77,7 +75,6 @@ void FillPrint(int m, int n)
 
 	for (int i = 0; i < 100; i++)
 	{
-		
 		if (i % 2 == 0)
 		{
 			cout << "**** player's ONE turn ****" << endl;
@@ -88,7 +85,7 @@ void FillPrint(int m, int n)
 			cout << "**** player's TWO turn ****" << endl;
 			cout << "---------------------------" << endl;
 		}
-		
+
 		int x1, y1;
 		cout << "Which figure: " << endl;
 		cin >> x1 >> y1;
@@ -98,7 +95,6 @@ void FillPrint(int m, int n)
 		int x2, y2;
 		cout << "Where to go: " << endl;
 		cin >> x2 >> y2;
-		
 		if (i % 2 == 0)  //проверка на шаг не больше 1 (или 2 при старте)  сверху
 		{
 			if(a[x2][y2] == 'o')
@@ -120,7 +116,6 @@ void FillPrint(int m, int n)
 					a[x1][y1] = ' ';
 					a[x2][y2] = 'O';
 				}
-				
 			}
 			else
 			{
@@ -142,9 +137,8 @@ void FillPrint(int m, int n)
 				a[x2][y2] = ' ';
 				i--;
 			}
-			
 		}
-		else  //проверка на шаг не больше 1 (или 2 при старте) снизу
+		else
 		{
 			if(a[x2][y2] == 'o' || a[x2][y2] == 'O')
 			{
@@ -187,13 +181,10 @@ void FillPrint(int m, int n)
 				i--;
 			}
 		}
-
-		
 	cout << endl;
 
 
-		
-  cout << "Press Esc for Exit" << endl;
+	cout << "Press Esc for Exit" << endl;
 	cout << endl;
 	for (int i = m; i > 0; i--)
 	{
@@ -208,11 +199,10 @@ void FillPrint(int m, int n)
 	cout << "    A B C D E F G H" << endl << endl;
 	cout << endl << endl;
 
-  char c = cin.get();
+	char c = cin.get();
  	if(c == 27)
-    {
-      break;  
-    }  
+    		{
+      			break;
+    		}
 	}
 }
-

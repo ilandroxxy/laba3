@@ -1,5 +1,5 @@
-#include <iostream>
 #include "header.h"
+#include <iostream>
 using namespace std;
 
 int main()
@@ -7,8 +7,6 @@ int main()
 	cout << "Hello, this Chess game!" << endl;
 	const int m = 8;
 	const int n = 8;
-	
-  FillPrint(m,n);
-	
+	FillPrint(m,n);
 	return 0;
 }
