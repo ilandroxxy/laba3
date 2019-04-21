@@ -10,6 +10,5 @@ int main()
 	
   FillPrint(m,n);
 	
-	
 	return 0;
 }

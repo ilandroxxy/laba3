@@ -101,86 +101,99 @@ void FillPrint(int m, int n)
 		
 		if (i % 2 == 0)  //проверка на шаг не больше 1 (или 2 при старте)  сверху
 		{
-			if(a[x2][y2] == 'o' || a[x2][y2] == 'O')
+			if(a[x2][y2] == 'o')
 			{
-				
 				cout << "Error!" << endl;
-				system("pause");
 				break;
 			}
+
 			if (x1 == 7)
 			{
 				if ((x1 - x2) > 2)
 				{
-					cout << "Error!" << endl;
-					system("pause");
-					break;
+					a[x2][y2] = ' ';
+					a[x1][y1] = 'O';
+					i--;
 				}
+				else
+				{
+					a[x1][y1] = ' ';
+					a[x2][y2] = 'O';
+				}
+				
 			}
 			else
 			{
 				if ((x1 - x2) > 1)
 				{
-					cout << "Error!" << endl;
-					system("pause");
-					break;
+					a[x1][y1] = 'O';
+					a[x2][y2] = ' ';
+					i--;
+				}
+				else
+				{
+					a[x1][y1] = ' ';
+					a[x2][y2] = 'O';
 				}
 			}
 			if (y1 != y2)
 			{
-				cout << "Error!" << endl;
-				system("pause");
-				break;
+				a[x1][y1] = 'O';
+				a[x2][y2] = ' ';
+				i--;
 			}
+			
 		}
 		else  //проверка на шаг не больше 1 (или 2 при старте) снизу
 		{
 			if(a[x2][y2] == 'o' || a[x2][y2] == 'O')
 			{
 				cout << "Error!" << endl;
-					system("pause");
-					break;
+				break;
 			}
+
 			if (x1 == 2)
 			{
 				if ((x2 - x1) > 2)
 				{
-					cout << "Error!" << endl;
-					system("pause");
-					break;
+					a[x1][y1] = 'o';
+					a[x2][y2] = ' ';
+					i--;
+				}
+				else
+				{
+					a[x1][y1] = ' ';
+					a[x2][y2] = 'o';
 				}
 			}
 			else
 			{
 				if ((x2 - x1) > 1)
 				{
-					cout << "Error!" << endl;
-					system("pause");
-					break;
+					a[x1][y1] = 'o';
+					a[x2][y2] = ' ';
+					i--;
+				}
+				else
+				{
+					a[x1][y1] = ' ';
+					a[x2][y2] = 'o';
 				}
 			}
 			if (y1 != y2)
 			{
-				cout << "Error!" << endl;
-				system("pause");
-				break;
+				a[x1][y1] = 'o';
+				a[x2][y2] = ' ';
+				i--;
 			}
-			
 		}
 
-		if (i % 2 == 0)
-		{
-			a[x2][y2] = 'O';
-		}
-		else
-		{
-			a[x2][y2] = 'o';
-		}
-		cout << endl;
+		
+	cout << endl;
 
 
 		
-  	cout << "Press Esc for Exit" << endl;
+  cout << "Press Esc for Exit" << endl;
 	cout << endl;
 	for (int i = m; i > 0; i--)
 	{
@@ -195,11 +208,11 @@ void FillPrint(int m, int n)
 	cout << "    A B C D E F G H" << endl << endl;
 	cout << endl << endl;
 
-    char c = cin.get();
-         if(c == 27)
-         {
-            break;  
-         }  
+  char c = cin.get();
+ 	if(c == 27)
+    {
+      break;  
+    }  
 	}
 }
 
