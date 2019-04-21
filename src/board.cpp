@@ -53,25 +53,6 @@ void FillPrint(int m, int n)
 		}
 	}
 
- 	cout << "Press Esc for Exit" << endl;
-	cout << endl;
-	for (int i = m; i > 0; i--)
-	{
-		cout << i << "  ";
-		for (int j = 1; j <= n; j++)
-		{
-			cout << "|" << a[i][j] ;
-		}
-		cout <<"|" << endl;
-	}
-	cout << endl <<  "    1 2 3 4 5 6 7 8" << endl;
-	cout << "    A B C D E F G H" << endl << endl;
-	cout << endl << endl;
-
-
-
-
-
 
 	for (int i = 0; i < 100; i++)
 	{
