@@ -1,6 +1,6 @@
 #include "board.h"
-#include "board_print.h"
-#include "board_print_plain.h"
+#include "draw.h"
+#include "draw_board.h"
 #include "board_read.h"
 #include <math.h>
 #include <stdio.h>
