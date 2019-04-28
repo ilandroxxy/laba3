@@ -1,7 +1,7 @@
 #include "board.h"
+#include "board_read.h"
 #include "draw.h"
 #include "draw_board.h"
-#include "board_read.h"
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -65,8 +65,6 @@ void check(char deck[8][8], int test)
             make_move(deck, moveint);
         }
 
-        //Ôåðçü
-
         if (((deck[moveint[1]][moveint[0]] == 'q')
              || (deck[moveint[1]][moveint[0]] == 'Q'))
             && ((move[0] == move[2]) || (move[1] == move[3])
@@ -117,8 +115,6 @@ void check(char deck[8][8], int test)
             }
         }
 
-        //Ëàäüÿ
-
         if (((deck[moveint[1]][moveint[0]] == 'B')
              || (deck[moveint[1]][moveint[0]] == 'b'))
             && (abs(move[0] - move[2]) == abs(move[1] - move[3]))) {
@@ -144,8 +140,6 @@ void check(char deck[8][8], int test)
                 Counter = 0;
             }
         }
-
-        //Îôèöåð
 
         if (((deck[moveint[1]][moveint[0]] == 'R')
              || (deck[moveint[1]][moveint[0]] == 'r'))

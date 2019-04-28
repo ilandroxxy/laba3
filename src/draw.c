@@ -1,9 +1,9 @@
 #include "draw.h"
 #include "board.h"
-#include "draw_board.h"
 #include "board_read.h"
+#include "draw_board.h"
 
-void board_print(char deck[8][8])
+void draw(char deck[8][8])
 {
     char k[] = {'0', 'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r'};
     for (int s = 1; s < 9; ++s) {
