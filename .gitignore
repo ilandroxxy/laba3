@@ -1,3 +1,7 @@
-*.txt
-compile
+*.o
+*.swp
+*.a
+*~
+*.exe
+chess
 .clang-format
