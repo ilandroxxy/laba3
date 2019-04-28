@@ -35,8 +35,8 @@ build/board_read.o: src/board_read.c src/board_read.h src/board.h
 bin/compile_test: $(OB) 
 	$(CXX) $(FLAGS) $(OB) -o bin/compile_test
 
-build/main_test.o: test/main.c ctest/ctest.h src/board.h src/board_read.h 
-	$(CXX) $(CFLAGS) -I ctest -I src -c test/main.c -o build/main_test.o
+build/main_test.o: test/main.c thirdparty/ctest.h src/board.h src/board_read.h 
+	$(CXX) $(CFLAGS) -I thirdparty -I src -c test/main.c -o build/main_test.o
 
 build:
 	mkdir -p build
