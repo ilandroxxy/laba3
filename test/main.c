@@ -7,20 +7,20 @@
 
 char deck[8][8];
 
-CTEST(Syntax, Correct)
+CTEST(Board, Correct)
 {
     int result = input_check("a2a8");
     int expected = 0;
     ASSERT_EQUAL(expected, result);
 }
 
-CTEST(Syntax, Incorrect)
+CTEST(board, Incorrect)
 {
     int result = input_check("a2a9");
     int expected = 1;
     ASSERT_EQUAL(expected, result);
 }
-CTEST(Pawn, Correct)
+CTEST(pawn_move, Correct)
 {
     draw(deck);
     char move[4] = "a2a4";
@@ -31,7 +31,7 @@ CTEST(Pawn, Correct)
     ASSERT_EQUAL(expected, result);
 }
 
-CTEST(Pawn, Incorrect)
+CTEST(pawn_move, Incorrect)
 {
     draw(deck);
     char move[4] = "a2a5";
@@ -62,7 +62,7 @@ CTEST(Check_Figure, Incorrect)
     int expected = 1;
     ASSERT_EQUAL(expected, result);
 }
-CTEST(PAWN, Correct)
+CTEST(PAWN_move, Correct)
 {
     draw(deck);
     char move[4] = "a7a5";
@@ -73,7 +73,7 @@ CTEST(PAWN, Correct)
     ASSERT_EQUAL(expected, result);
 }
 
-CTEST(PAWN, Incorrect)
+CTEST(PAWN_move, Incorrect)
 {
     draw(deck);
     char move[4] = "a7a3";
@@ -83,7 +83,7 @@ CTEST(PAWN, Incorrect)
     int expected = 1;
     ASSERT_EQUAL(expected, result);
 }
-int main(int argc, const char** argv)
+int main(int argc, const char **argv)
 {
     return ctest_main(argc, argv);
 }
