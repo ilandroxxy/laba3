@@ -1,7 +1,7 @@
 #include "draw_board.h"
 #include "board.h"
-#include "draw.h"
 #include "board_read.h"
+#include "draw.h"
 #include <stdio.h>
 void printDeck(char deck[8][8])
 {

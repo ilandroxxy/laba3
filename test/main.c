@@ -1,9 +1,9 @@
 #define CTEST_MAIN
 #include <board.h>
-#include <draw.h>
-#include <draw_board.h>
 #include <board_read.h>
 #include <ctest.h>
+#include <draw.h>
+#include <draw_board.h>
 
 char deck[8][8];
 
@@ -83,7 +83,7 @@ CTEST(PAWN_move, Incorrect)
     int expected = 1;
     ASSERT_EQUAL(expected, result);
 }
-int main(int argc, const char **argv)
+int main(int argc, const char** argv)
 {
     return ctest_main(argc, argv);
 }
